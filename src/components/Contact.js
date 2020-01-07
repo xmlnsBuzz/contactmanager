@@ -7,6 +7,13 @@ class Contact extends Component {
       showContactInfo: false
    };
    // contact info 가 display: none 상태에서 문서 load
+
+   onDeleteClick = () => {
+      this.props.deleteClickHandler();
+   }
+
+
+
    render() {
       const { name, email, phone } = this.props.contact;
       const { showContactInfo } = this.state;
@@ -16,8 +23,11 @@ class Contact extends Component {
             <h4>
                <i
                   onClick={() => this.setState({ showContactInfo: !this.state.showContactInfo })}
-                  className="fas fa-address-book"
+                  className="fa fa-chevron-down"
                   style={{ cursor: 'pointer', marginLeft: '5px' }}
+               />
+               <i className="fas fa-times" style={{ cursor: 'pointer', float: 'right', color: 'red' }}
+               onClick={this.onDeleteClick}
                />
                {` ${name} `}
             </h4>
@@ -36,6 +46,7 @@ class Contact extends Component {
 
 Contact.propTypes = {
    contact: PropTypes.object.isRequired,
+   deleteClickHandler: PropTypes.func.isRequired
 
 }
 
