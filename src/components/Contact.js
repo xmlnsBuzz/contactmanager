@@ -4,14 +4,9 @@ import PropTypes from 'prop-types';
 class Contact extends Component {
 
    state = {
-      showContactInfo: true
+      showContactInfo: false
    };
-
-   onShowClick = e => {
-      this.setState = ({ showContactInfo: !this.state.showContactInfo });
-      // state toggle
-    };
-
+   // contact info 가 display: none 상태에서 문서 load
    render() {
       const { name, email, phone } = this.props.contact;
       const { showContactInfo } = this.state;
@@ -20,7 +15,7 @@ class Contact extends Component {
          <div className="card card-body mb-3">
             <h4>
                <i
-                  onClick={() => this.setState({showContactInfo: !this.state.showContactInfo})}
+                  onClick={() => this.setState({ showContactInfo: !this.state.showContactInfo })}
                   className="fas fa-address-book"
                   style={{ cursor: 'pointer', marginLeft: '5px' }}
                />
@@ -33,7 +28,7 @@ class Contact extends Component {
                </ul>
             ) : null}
          </div>
-         
+
       );
    }
 }
@@ -41,7 +36,7 @@ class Contact extends Component {
 
 Contact.propTypes = {
    contact: PropTypes.object.isRequired,
-   
+
 }
 
 export default Contact;
