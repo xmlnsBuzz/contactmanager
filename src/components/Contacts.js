@@ -30,7 +30,7 @@ class Contacts extends Component {
    render() {
       const { contacts } = this.state;
       return (
-         <>
+         <React.Fragment>
             <h1>{contacts.name}</h1>
             <div>
                {contacts.map(contact => ( // map이 중요한 개념이니 알아볼 것.
@@ -40,7 +40,7 @@ class Contacts extends Component {
                   />
                ))}
             </div>
-         </>
+         </React.Fragment>
       )
    }
 }

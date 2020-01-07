@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react'; //, {Component} 지웠음.
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
